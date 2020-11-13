@@ -7,7 +7,7 @@ import axios from 'axios'
 import echarts from 'echarts'
 import VueRouter from 'vue-router'
 
-axios.defaults.baseURL = 'www.client.com';
+axios.defaults.baseURL = 'http://www.client.com';
 Vue.prototype.$axios=axios;
 Vue.prototype.$echarts = echarts
 
