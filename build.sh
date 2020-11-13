@@ -15,7 +15,7 @@ if [ $? -eq 0 ]
 then
 echo "push success"
 docker rmi registry.cn-hangzhou.aliyuncs.com/ceres-vue/$image_name:$date
-kubectl set image deployment/$image_name $image_name=registry.cn-hangzhou.aliyuncs.com/ceres-vue/$image_name:$date -n spring-cloud
+kubectl set image deployment/$image_name $image_name=registry.cn-hangzhou.aliyuncs.com/ceres-vue/$image_name:$date -n vue
 else
 echo "push error"
 fi
