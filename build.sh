@@ -6,16 +6,16 @@ echo "image_name is null"
 exit 1
 fi
 date=`date +%Y%m%d%H%M%S`
-docker build -t registry.cn-hangzhou.aliyuncs.com/ceres-spring/$image_name:$date .
+docker build -t registry.cn-hangzhou.aliyuncs.com/ceres-vue/$image_name:$date .
 if [ $? -eq 0 ]
 then
 echo "build success"
-docker push registry.cn-hangzhou.aliyuncs.com/ceres-spring/$image_name:$date
+docker push registry.cn-hangzhou.aliyuncs.com/ceres-vue/$image_name:$date
 if [ $? -eq 0 ]
 then
 echo "push success"
-docker rmi registry.cn-hangzhou.aliyuncs.com/ceres-spring/$image_name:$date
-kubectl set image deployment/$image_name $image_name=registry.cn-hangzhou.aliyuncs.com/ceres-spring/$image_name:$date -n spring-cloud
+docker rmi registry.cn-hangzhou.aliyuncs.com/ceres-vue/$image_name:$date
+kubectl set image deployment/$image_name $image_name=registry.cn-hangzhou.aliyuncs.com/ceres-vue/$image_name:$date -n spring-cloud
 else
 echo "push error"
 fi
